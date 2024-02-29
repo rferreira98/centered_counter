@@ -20,7 +20,7 @@ describe("core functionality", () => {
 
   test("update count and reset counter default", () => {
     const { a, b, c } = getHTML();
-    update_count_and_reset_counter(count, a, b, c);
+    update_count_and_reset_counter(a, b, c);
 
     expect(c.textContent?.trim()).toBe("0");
   });
@@ -29,7 +29,7 @@ describe("core functionality", () => {
     const { a, b, c } = getHTML();
     c.textContent = "5";
 
-    update_count_and_reset_counter(count, a, b, c);
+    update_count_and_reset_counter(a, b, c);
 
     expect(c.textContent?.trim()).toBe("0");
   });

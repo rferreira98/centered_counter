@@ -11,15 +11,16 @@ import { factory } from "../factory";
  * @param {HTMLSpanElement} [currentCount] - The step to increment each number in the sequence. Default is 1.
  */
 export function update_count_and_reset_counter(
-  count: Function,
   startAtControl: HTMLInputElement,
   stepControl: HTMLInputElement,
   currentCount: HTMLSpanElement,
 ) {
   const startValue: number = parseInt(startAtControl.value);
   const stepValue: number = parseInt(stepControl.value);
-  count = factory(startValue, stepValue);
+  const updatedCount = factory(startValue, stepValue);
   currentCount.textContent = `${startValue}`; //reset value
+
+  return updatedCount;
 }
 
 /**
