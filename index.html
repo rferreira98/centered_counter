@@ -12,6 +12,7 @@
         <div class="control">
           <label for="start_at">Start at</label>
           <input
+            data-cy="start-ctrl"
             name="start_at"
             value="0"
             id="start_at"
@@ -20,12 +21,22 @@
         </div>
         <div class="control">
           <label for="step">Step</label>
-          <input name="step" value="1" id="step" aria-label="Step value" />
+          <input
+            data-cy="step-ctrl"
+            name="step"
+            value="1"
+            id="step"
+            aria-label="Step value"
+          />
         </div>
       </div>
       <div class="results">
-        <button class="count_button" aria-label="Increment counter">
-          <span class="current_count"> 0 </span>
+        <button
+          data-cy="count-btn"
+          class="count_button"
+          aria-label="Increment counter"
+        >
+          <span data-cy="count-span" class="current_count"> 0 </span>
         </button>
       </div>
     </main>
