@@ -59,7 +59,7 @@ describe("main", () => {
     });
   });
 
-  it.only("resets counter on change start", () => {
+  it("resets counter on change start", () => {
     cy.get('[data-cy="start-ctrl"]');
     cy.get('[data-cy="step-ctrl"]');
     cy.get('[data-cy="count-btn"]')
