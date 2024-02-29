@@ -1,17 +1,34 @@
 import { factory } from "../factory";
 
+/**
+ * This function updates given counter using the factory utility function and
+ * both startAt and step values retrieved from start_at_control and step_control.
+ * Finally, it uses current_count to display the result.
+ *
+ * @param {Function} [count] - Factory function.
+ * @param {HTMLInputElement} [startAtControl] - The step to increment each number in the sequence. Default is 1.
+ * @param {HTMLInputElement} [stepControl] - The step to increment each number in the sequence. Default is 1.
+ * @param {HTMLSpanElement} [currentCount] - The step to increment each number in the sequence. Default is 1.
+ */
 export function update_count_and_reset_counter(
   count: Function,
-  start_at_control: HTMLInputElement,
-  step_control: HTMLInputElement,
-  current_count: HTMLSpanElement,
+  startAtControl: HTMLInputElement,
+  stepControl: HTMLInputElement,
+  currentCount: HTMLSpanElement,
 ) {
-  const startValue: number = parseInt(start_at_control.value);
-  const stepValue: number = parseInt(step_control.value);
+  const startValue: number = parseInt(startAtControl.value);
+  const stepValue: number = parseInt(stepControl.value);
   count = factory(startValue, stepValue);
-  current_count.textContent = `${startValue}`; //reset value
+  currentCount.textContent = `${startValue}`; //reset value
 }
 
-export function update_count(count: Function, current_count: HTMLSpanElement) {
-  current_count.textContent = count().toString();
+/**
+ * This function updates current_count span element
+ * with new iteration from given factory function.
+ *
+ * @param {Function} [count] - Factory function.
+ * @param {HTMLSpanElement} [currentCount] - The step to increment each number in the sequence. Default is 1.
+ */
+export function update_count(count: Function, currentCount: HTMLSpanElement) {
+  currentCount.textContent = count().toString();
 }
